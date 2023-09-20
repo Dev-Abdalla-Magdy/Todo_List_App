@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #ccc;
+}
+.app {
+  height: 100vh;
+  text-align: center;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.app .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  font-size: 40px;
+  color: #655987;
+}
+.app .title img {
+  max-width: 50px;
+}
+.app .add-tasks {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.app .add-tasks input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #444;
+}
+.app .add-tasks button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 20px;
+  background-color: #ffba55;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.app .tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding-bottom: 20px;
+}
+.app .tasks .task {
+  position: relative;
+  padding: 10px 40px;
+  text-align: start;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 25px;
+}
+.app .tasks .task::before {
+  content: "";
+  background-image: url(../files/unchecked.png);
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.app .tasks .task .delete {
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: #ff3b30;
+  color: #fff;
+}
+.app .tasks .task .delete:hover {
+  background-color: #777;
+}
+.app .tasks .task.checked {
+  text-decoration: line-through;
+  color: #777;
+}
+.app .tasks .task.checked::before {
+  background-image: url(../files/checked.png);
+}
+@media (min-width: 768px) {
+  .app .tasks {
+    padding: 0 20px;
+  }
+}
